@@ -60,5 +60,5 @@ const columns = [
 export function TransactionTable() {
   const [data] = React.useState(() => [...defaultData]);
 
-  return <Table data={data} columns={columns} />;
+  return <Table data={data} columns={columns} hasPagination />;
 }
