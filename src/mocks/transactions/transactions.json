@@ -322,5 +322,1301 @@
       },
       "status": "processing"
     }
+  },
+  {
+    "transaction_id": "65ba7415570a5b5899a00274",
+    "date": "2024-01-15T01:25:36 -01:00",
+    "amount": 2711.37,
+    "status": "cancelled",
+    "description": "fugiat",
+    "account": {
+      "account_id": "65ba7415242c8dac15ebbc55",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 1349.48,
+      "balance_after": 3003
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3894.96,
+      "transaction_date": "2023-04-28T07:21:43 -02:00",
+      "merchant_details": {
+        "merchant_name": "sit velit",
+        "merchant_id": "65ba74154ffa3a749481d99b",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba741590e92e328bcbd926",
+    "date": "2023-08-15T08:34:34 -02:00",
+    "amount": 1358.55,
+    "status": "cancelled",
+    "description": "ad",
+    "account": {
+      "account_id": "65ba741512d16eec542133f8",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 2079.71,
+      "balance_after": 1555.15
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3400.54,
+      "transaction_date": "2024-01-25T09:27:58 -01:00",
+      "merchant_details": {
+        "merchant_name": "cillum ipsum",
+        "merchant_id": "65ba74153d571ea1de4c3fe5",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba741577e128921d340ebb",
+    "date": "2023-06-14T07:39:59 -02:00",
+    "amount": 3417.31,
+    "status": "posted",
+    "description": "ea",
+    "account": {
+      "account_id": "65ba74156ded0347ac0350a0",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 1478.63,
+      "balance_after": 1917.26
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 1802.34,
+      "transaction_date": "2023-05-26T05:03:28 -02:00",
+      "merchant_details": {
+        "merchant_name": "labore cillum",
+        "merchant_id": "65ba74159dc7ea12c69aca6c",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "settled"
+    }
+  },
+  {
+    "transaction_id": "65ba7415703c7a9093070db9",
+    "date": "2023-06-01T05:13:14 -02:00",
+    "amount": 1715.33,
+    "status": "pending",
+    "description": "irure",
+    "account": {
+      "account_id": "65ba7415baecbe714d5f8559",
+      "client_id": "a12345b",
+      "account_type": "savings",
+      "balance_before": 3269.32,
+      "balance_after": 1060.59
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 2995.5,
+      "transaction_date": "2023-04-22T08:20:57 -02:00",
+      "merchant_details": {
+        "merchant_name": "dolore enim",
+        "merchant_id": "65ba74150026716cbd86b53d",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "reverted"
+    }
+  },
+  {
+    "transaction_id": "65ba741529226713bebe7802",
+    "date": "2023-12-23T12:44:17 -01:00",
+    "amount": 2339.36,
+    "status": "posted",
+    "description": "eu",
+    "account": {
+      "account_id": "65ba7415809af5ad189dafec",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 2115.87,
+      "balance_after": 1759.28
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 3442.88,
+      "transaction_date": "2024-01-20T01:58:28 -01:00",
+      "merchant_details": {
+        "merchant_name": "magna aliqua",
+        "merchant_id": "65ba74153854cad51a425cdc",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "settled"
+    }
+  },
+  {
+    "transaction_id": "65ba7415e59a5d26aa4741b1",
+    "date": "2023-10-05T07:57:16 -02:00",
+    "amount": 1354.08,
+    "status": "posted",
+    "description": "voluptate",
+    "account": {
+      "account_id": "65ba741539be535ec27b8b2a",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 3956.35,
+      "balance_after": 2263.26
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3579.45,
+      "transaction_date": "2023-12-08T01:49:14 -01:00",
+      "merchant_details": {
+        "merchant_name": "id sunt",
+        "merchant_id": "65ba7415d0d51540b87d2280",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415e4e6fdf767c8cd29",
+    "date": "2023-04-30T05:44:47 -02:00",
+    "amount": 2581.72,
+    "status": "cancelled",
+    "description": "nostrud",
+    "account": {
+      "account_id": "65ba7415f5235d67eab3813d",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 1485.85,
+      "balance_after": 1172.33
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 1741.91,
+      "transaction_date": "2023-03-10T03:17:01 -01:00",
+      "merchant_details": {
+        "merchant_name": "non laborum",
+        "merchant_id": "65ba741590b1002f744a2c2c",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "settled"
+    }
+  },
+  {
+    "transaction_id": "65ba741513592171d6402fc7",
+    "date": "2023-09-07T11:28:33 -02:00",
+    "amount": 3523.1,
+    "status": "cancelled",
+    "description": "ullamco",
+    "account": {
+      "account_id": "65ba7415303952f097733890",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 1839.04,
+      "balance_after": 1989.91
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 2109.54,
+      "transaction_date": "2023-10-08T05:07:34 -02:00",
+      "merchant_details": {
+        "merchant_name": "exercitation commodo",
+        "merchant_id": "65ba74159b682a02b6ded6b3",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415faa2a175a76dc942",
+    "date": "2023-01-13T06:18:15 -01:00",
+    "amount": 2316.47,
+    "status": "cancelled",
+    "description": "et",
+    "account": {
+      "account_id": "65ba7415060efb3d29fff355",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 3721.83,
+      "balance_after": 3286.71
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 1114.51,
+      "transaction_date": "2023-03-10T10:16:57 -01:00",
+      "merchant_details": {
+        "merchant_name": "ullamco aliqua",
+        "merchant_id": "65ba7415f8e18c26a95e9551",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "declined"
+    }
+  },
+  {
+    "transaction_id": "65ba7415b1cf9dc9d1e9cf32",
+    "date": "2023-07-29T08:50:07 -02:00",
+    "amount": 3203.03,
+    "status": "pending",
+    "description": "dolore",
+    "account": {
+      "account_id": "65ba74157fa850f4b1e0efee",
+      "client_id": "a12345b",
+      "account_type": "CD",
+      "balance_before": 2677.22,
+      "balance_after": 3262.64
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3660.8,
+      "transaction_date": "2023-07-06T07:10:49 -02:00",
+      "merchant_details": {
+        "merchant_name": "deserunt consequat",
+        "merchant_id": "65ba7415fb6b60ba11834df7",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415c60267654b161b2a",
+    "date": "2023-09-30T01:51:34 -02:00",
+    "amount": 2133.79,
+    "status": "pending",
+    "description": "elit",
+    "account": {
+      "account_id": "65ba7415303bb32cf99372a6",
+      "client_id": "a12345b",
+      "account_type": "savings",
+      "balance_before": 3071.59,
+      "balance_after": 2192.26
+    },
+    "card_payment": {
+      "card_type": "visa",
+      "last_four_digits": 1234,
+      "transaction_amount": 2787.56,
+      "transaction_date": "2024-01-04T04:20:00 -01:00",
+      "merchant_details": {
+        "merchant_name": "velit eiusmod",
+        "merchant_id": "65ba74157fab83bf25f04ea9",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "reverted"
+    }
+  },
+  {
+    "transaction_id": "65ba741539b6ae13eda0f7bc",
+    "date": "2023-12-01T09:22:22 -01:00",
+    "amount": 1671.56,
+    "status": "posted",
+    "description": "labore",
+    "account": {
+      "account_id": "65ba7415ab9e2eadc37e0631",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 1404.82,
+      "balance_after": 3617.96
+    },
+    "card_payment": {
+      "card_type": "visa",
+      "last_four_digits": 1234,
+      "transaction_amount": 1838.35,
+      "transaction_date": "2023-06-25T01:44:54 -02:00",
+      "merchant_details": {
+        "merchant_name": "eiusmod ullamco",
+        "merchant_id": "65ba7415d356ff70c714d08c",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415570a5b5899a00274",
+    "date": "2024-01-15T01:25:36 -01:00",
+    "amount": 2711.37,
+    "status": "cancelled",
+    "description": "fugiat",
+    "account": {
+      "account_id": "65ba7415242c8dac15ebbc55",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 1349.48,
+      "balance_after": 3003
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3894.96,
+      "transaction_date": "2023-04-28T07:21:43 -02:00",
+      "merchant_details": {
+        "merchant_name": "sit velit",
+        "merchant_id": "65ba74154ffa3a749481d99b",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba741590e92e328bcbd926",
+    "date": "2023-08-15T08:34:34 -02:00",
+    "amount": 1358.55,
+    "status": "cancelled",
+    "description": "ad",
+    "account": {
+      "account_id": "65ba741512d16eec542133f8",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 2079.71,
+      "balance_after": 1555.15
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3400.54,
+      "transaction_date": "2024-01-25T09:27:58 -01:00",
+      "merchant_details": {
+        "merchant_name": "cillum ipsum",
+        "merchant_id": "65ba74153d571ea1de4c3fe5",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba741577e128921d340ebb",
+    "date": "2023-06-14T07:39:59 -02:00",
+    "amount": 3417.31,
+    "status": "posted",
+    "description": "ea",
+    "account": {
+      "account_id": "65ba74156ded0347ac0350a0",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 1478.63,
+      "balance_after": 1917.26
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 1802.34,
+      "transaction_date": "2023-05-26T05:03:28 -02:00",
+      "merchant_details": {
+        "merchant_name": "labore cillum",
+        "merchant_id": "65ba74159dc7ea12c69aca6c",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "settled"
+    }
+  },
+  {
+    "transaction_id": "65ba7415703c7a9093070db9",
+    "date": "2023-06-01T05:13:14 -02:00",
+    "amount": 1715.33,
+    "status": "pending",
+    "description": "irure",
+    "account": {
+      "account_id": "65ba7415baecbe714d5f8559",
+      "client_id": "a12345b",
+      "account_type": "savings",
+      "balance_before": 3269.32,
+      "balance_after": 1060.59
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 2995.5,
+      "transaction_date": "2023-04-22T08:20:57 -02:00",
+      "merchant_details": {
+        "merchant_name": "dolore enim",
+        "merchant_id": "65ba74150026716cbd86b53d",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "reverted"
+    }
+  },
+  {
+    "transaction_id": "65ba741529226713bebe7802",
+    "date": "2023-12-23T12:44:17 -01:00",
+    "amount": 2339.36,
+    "status": "posted",
+    "description": "eu",
+    "account": {
+      "account_id": "65ba7415809af5ad189dafec",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 2115.87,
+      "balance_after": 1759.28
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 3442.88,
+      "transaction_date": "2024-01-20T01:58:28 -01:00",
+      "merchant_details": {
+        "merchant_name": "magna aliqua",
+        "merchant_id": "65ba74153854cad51a425cdc",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "settled"
+    }
+  },
+  {
+    "transaction_id": "65ba7415e59a5d26aa4741b1",
+    "date": "2023-10-05T07:57:16 -02:00",
+    "amount": 1354.08,
+    "status": "posted",
+    "description": "voluptate",
+    "account": {
+      "account_id": "65ba741539be535ec27b8b2a",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 3956.35,
+      "balance_after": 2263.26
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3579.45,
+      "transaction_date": "2023-12-08T01:49:14 -01:00",
+      "merchant_details": {
+        "merchant_name": "id sunt",
+        "merchant_id": "65ba7415d0d51540b87d2280",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415e4e6fdf767c8cd29",
+    "date": "2023-04-30T05:44:47 -02:00",
+    "amount": 2581.72,
+    "status": "cancelled",
+    "description": "nostrud",
+    "account": {
+      "account_id": "65ba7415f5235d67eab3813d",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 1485.85,
+      "balance_after": 1172.33
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 1741.91,
+      "transaction_date": "2023-03-10T03:17:01 -01:00",
+      "merchant_details": {
+        "merchant_name": "non laborum",
+        "merchant_id": "65ba741590b1002f744a2c2c",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "settled"
+    }
+  },
+  {
+    "transaction_id": "65ba741513592171d6402fc7",
+    "date": "2023-09-07T11:28:33 -02:00",
+    "amount": 3523.1,
+    "status": "cancelled",
+    "description": "ullamco",
+    "account": {
+      "account_id": "65ba7415303952f097733890",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 1839.04,
+      "balance_after": 1989.91
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 2109.54,
+      "transaction_date": "2023-10-08T05:07:34 -02:00",
+      "merchant_details": {
+        "merchant_name": "exercitation commodo",
+        "merchant_id": "65ba74159b682a02b6ded6b3",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415faa2a175a76dc942",
+    "date": "2023-01-13T06:18:15 -01:00",
+    "amount": 2316.47,
+    "status": "cancelled",
+    "description": "et",
+    "account": {
+      "account_id": "65ba7415060efb3d29fff355",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 3721.83,
+      "balance_after": 3286.71
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 1114.51,
+      "transaction_date": "2023-03-10T10:16:57 -01:00",
+      "merchant_details": {
+        "merchant_name": "ullamco aliqua",
+        "merchant_id": "65ba7415f8e18c26a95e9551",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "declined"
+    }
+  },
+  {
+    "transaction_id": "65ba7415b1cf9dc9d1e9cf32",
+    "date": "2023-07-29T08:50:07 -02:00",
+    "amount": 3203.03,
+    "status": "pending",
+    "description": "dolore",
+    "account": {
+      "account_id": "65ba74157fa850f4b1e0efee",
+      "client_id": "a12345b",
+      "account_type": "CD",
+      "balance_before": 2677.22,
+      "balance_after": 3262.64
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3660.8,
+      "transaction_date": "2023-07-06T07:10:49 -02:00",
+      "merchant_details": {
+        "merchant_name": "deserunt consequat",
+        "merchant_id": "65ba7415fb6b60ba11834df7",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415c60267654b161b2a",
+    "date": "2023-09-30T01:51:34 -02:00",
+    "amount": 2133.79,
+    "status": "pending",
+    "description": "elit",
+    "account": {
+      "account_id": "65ba7415303bb32cf99372a6",
+      "client_id": "a12345b",
+      "account_type": "savings",
+      "balance_before": 3071.59,
+      "balance_after": 2192.26
+    },
+    "card_payment": {
+      "card_type": "visa",
+      "last_four_digits": 1234,
+      "transaction_amount": 2787.56,
+      "transaction_date": "2024-01-04T04:20:00 -01:00",
+      "merchant_details": {
+        "merchant_name": "velit eiusmod",
+        "merchant_id": "65ba74157fab83bf25f04ea9",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "reverted"
+    }
+  },
+  {
+    "transaction_id": "65ba741539b6ae13eda0f7bc",
+    "date": "2023-12-01T09:22:22 -01:00",
+    "amount": 1671.56,
+    "status": "posted",
+    "description": "labore",
+    "account": {
+      "account_id": "65ba7415ab9e2eadc37e0631",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 1404.82,
+      "balance_after": 3617.96
+    },
+    "card_payment": {
+      "card_type": "visa",
+      "last_four_digits": 1234,
+      "transaction_amount": 1838.35,
+      "transaction_date": "2023-06-25T01:44:54 -02:00",
+      "merchant_details": {
+        "merchant_name": "eiusmod ullamco",
+        "merchant_id": "65ba7415d356ff70c714d08c",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415570a5b5899a00274",
+    "date": "2024-01-15T01:25:36 -01:00",
+    "amount": 2711.37,
+    "status": "cancelled",
+    "description": "fugiat",
+    "account": {
+      "account_id": "65ba7415242c8dac15ebbc55",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 1349.48,
+      "balance_after": 3003
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3894.96,
+      "transaction_date": "2023-04-28T07:21:43 -02:00",
+      "merchant_details": {
+        "merchant_name": "sit velit",
+        "merchant_id": "65ba74154ffa3a749481d99b",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba741590e92e328bcbd926",
+    "date": "2023-08-15T08:34:34 -02:00",
+    "amount": 1358.55,
+    "status": "cancelled",
+    "description": "ad",
+    "account": {
+      "account_id": "65ba741512d16eec542133f8",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 2079.71,
+      "balance_after": 1555.15
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3400.54,
+      "transaction_date": "2024-01-25T09:27:58 -01:00",
+      "merchant_details": {
+        "merchant_name": "cillum ipsum",
+        "merchant_id": "65ba74153d571ea1de4c3fe5",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba741577e128921d340ebb",
+    "date": "2023-06-14T07:39:59 -02:00",
+    "amount": 3417.31,
+    "status": "posted",
+    "description": "ea",
+    "account": {
+      "account_id": "65ba74156ded0347ac0350a0",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 1478.63,
+      "balance_after": 1917.26
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 1802.34,
+      "transaction_date": "2023-05-26T05:03:28 -02:00",
+      "merchant_details": {
+        "merchant_name": "labore cillum",
+        "merchant_id": "65ba74159dc7ea12c69aca6c",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "settled"
+    }
+  },
+  {
+    "transaction_id": "65ba7415703c7a9093070db9",
+    "date": "2023-06-01T05:13:14 -02:00",
+    "amount": 1715.33,
+    "status": "pending",
+    "description": "irure",
+    "account": {
+      "account_id": "65ba7415baecbe714d5f8559",
+      "client_id": "a12345b",
+      "account_type": "savings",
+      "balance_before": 3269.32,
+      "balance_after": 1060.59
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 2995.5,
+      "transaction_date": "2023-04-22T08:20:57 -02:00",
+      "merchant_details": {
+        "merchant_name": "dolore enim",
+        "merchant_id": "65ba74150026716cbd86b53d",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "reverted"
+    }
+  },
+  {
+    "transaction_id": "65ba741529226713bebe7802",
+    "date": "2023-12-23T12:44:17 -01:00",
+    "amount": 2339.36,
+    "status": "posted",
+    "description": "eu",
+    "account": {
+      "account_id": "65ba7415809af5ad189dafec",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 2115.87,
+      "balance_after": 1759.28
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 3442.88,
+      "transaction_date": "2024-01-20T01:58:28 -01:00",
+      "merchant_details": {
+        "merchant_name": "magna aliqua",
+        "merchant_id": "65ba74153854cad51a425cdc",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "settled"
+    }
+  },
+  {
+    "transaction_id": "65ba7415e59a5d26aa4741b1",
+    "date": "2023-10-05T07:57:16 -02:00",
+    "amount": 1354.08,
+    "status": "posted",
+    "description": "voluptate",
+    "account": {
+      "account_id": "65ba741539be535ec27b8b2a",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 3956.35,
+      "balance_after": 2263.26
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3579.45,
+      "transaction_date": "2023-12-08T01:49:14 -01:00",
+      "merchant_details": {
+        "merchant_name": "id sunt",
+        "merchant_id": "65ba7415d0d51540b87d2280",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415e4e6fdf767c8cd29",
+    "date": "2023-04-30T05:44:47 -02:00",
+    "amount": 2581.72,
+    "status": "cancelled",
+    "description": "nostrud",
+    "account": {
+      "account_id": "65ba7415f5235d67eab3813d",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 1485.85,
+      "balance_after": 1172.33
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 1741.91,
+      "transaction_date": "2023-03-10T03:17:01 -01:00",
+      "merchant_details": {
+        "merchant_name": "non laborum",
+        "merchant_id": "65ba741590b1002f744a2c2c",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "settled"
+    }
+  },
+  {
+    "transaction_id": "65ba741513592171d6402fc7",
+    "date": "2023-09-07T11:28:33 -02:00",
+    "amount": 3523.1,
+    "status": "cancelled",
+    "description": "ullamco",
+    "account": {
+      "account_id": "65ba7415303952f097733890",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 1839.04,
+      "balance_after": 1989.91
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 2109.54,
+      "transaction_date": "2023-10-08T05:07:34 -02:00",
+      "merchant_details": {
+        "merchant_name": "exercitation commodo",
+        "merchant_id": "65ba74159b682a02b6ded6b3",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415faa2a175a76dc942",
+    "date": "2023-01-13T06:18:15 -01:00",
+    "amount": 2316.47,
+    "status": "cancelled",
+    "description": "et",
+    "account": {
+      "account_id": "65ba7415060efb3d29fff355",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 3721.83,
+      "balance_after": 3286.71
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 1114.51,
+      "transaction_date": "2023-03-10T10:16:57 -01:00",
+      "merchant_details": {
+        "merchant_name": "ullamco aliqua",
+        "merchant_id": "65ba7415f8e18c26a95e9551",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "declined"
+    }
+  },
+  {
+    "transaction_id": "65ba7415b1cf9dc9d1e9cf32",
+    "date": "2023-07-29T08:50:07 -02:00",
+    "amount": 3203.03,
+    "status": "pending",
+    "description": "dolore",
+    "account": {
+      "account_id": "65ba74157fa850f4b1e0efee",
+      "client_id": "a12345b",
+      "account_type": "CD",
+      "balance_before": 2677.22,
+      "balance_after": 3262.64
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3660.8,
+      "transaction_date": "2023-07-06T07:10:49 -02:00",
+      "merchant_details": {
+        "merchant_name": "deserunt consequat",
+        "merchant_id": "65ba7415fb6b60ba11834df7",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415c60267654b161b2a",
+    "date": "2023-09-30T01:51:34 -02:00",
+    "amount": 2133.79,
+    "status": "pending",
+    "description": "elit",
+    "account": {
+      "account_id": "65ba7415303bb32cf99372a6",
+      "client_id": "a12345b",
+      "account_type": "savings",
+      "balance_before": 3071.59,
+      "balance_after": 2192.26
+    },
+    "card_payment": {
+      "card_type": "visa",
+      "last_four_digits": 1234,
+      "transaction_amount": 2787.56,
+      "transaction_date": "2024-01-04T04:20:00 -01:00",
+      "merchant_details": {
+        "merchant_name": "velit eiusmod",
+        "merchant_id": "65ba74157fab83bf25f04ea9",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "reverted"
+    }
+  },
+  {
+    "transaction_id": "65ba741539b6ae13eda0f7bc",
+    "date": "2023-12-01T09:22:22 -01:00",
+    "amount": 1671.56,
+    "status": "posted",
+    "description": "labore",
+    "account": {
+      "account_id": "65ba7415ab9e2eadc37e0631",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 1404.82,
+      "balance_after": 3617.96
+    },
+    "card_payment": {
+      "card_type": "visa",
+      "last_four_digits": 1234,
+      "transaction_amount": 1838.35,
+      "transaction_date": "2023-06-25T01:44:54 -02:00",
+      "merchant_details": {
+        "merchant_name": "eiusmod ullamco",
+        "merchant_id": "65ba7415d356ff70c714d08c",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415570a5b5899a00274",
+    "date": "2024-01-15T01:25:36 -01:00",
+    "amount": 2711.37,
+    "status": "cancelled",
+    "description": "fugiat",
+    "account": {
+      "account_id": "65ba7415242c8dac15ebbc55",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 1349.48,
+      "balance_after": 3003
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3894.96,
+      "transaction_date": "2023-04-28T07:21:43 -02:00",
+      "merchant_details": {
+        "merchant_name": "sit velit",
+        "merchant_id": "65ba74154ffa3a749481d99b",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba741590e92e328bcbd926",
+    "date": "2023-08-15T08:34:34 -02:00",
+    "amount": 1358.55,
+    "status": "cancelled",
+    "description": "ad",
+    "account": {
+      "account_id": "65ba741512d16eec542133f8",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 2079.71,
+      "balance_after": 1555.15
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3400.54,
+      "transaction_date": "2024-01-25T09:27:58 -01:00",
+      "merchant_details": {
+        "merchant_name": "cillum ipsum",
+        "merchant_id": "65ba74153d571ea1de4c3fe5",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba741577e128921d340ebb",
+    "date": "2023-06-14T07:39:59 -02:00",
+    "amount": 3417.31,
+    "status": "posted",
+    "description": "ea",
+    "account": {
+      "account_id": "65ba74156ded0347ac0350a0",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 1478.63,
+      "balance_after": 1917.26
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 1802.34,
+      "transaction_date": "2023-05-26T05:03:28 -02:00",
+      "merchant_details": {
+        "merchant_name": "labore cillum",
+        "merchant_id": "65ba74159dc7ea12c69aca6c",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "settled"
+    }
+  },
+  {
+    "transaction_id": "65ba7415703c7a9093070db9",
+    "date": "2023-06-01T05:13:14 -02:00",
+    "amount": 1715.33,
+    "status": "pending",
+    "description": "irure",
+    "account": {
+      "account_id": "65ba7415baecbe714d5f8559",
+      "client_id": "a12345b",
+      "account_type": "savings",
+      "balance_before": 3269.32,
+      "balance_after": 1060.59
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 2995.5,
+      "transaction_date": "2023-04-22T08:20:57 -02:00",
+      "merchant_details": {
+        "merchant_name": "dolore enim",
+        "merchant_id": "65ba74150026716cbd86b53d",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "reverted"
+    }
+  },
+  {
+    "transaction_id": "65ba741529226713bebe7802",
+    "date": "2023-12-23T12:44:17 -01:00",
+    "amount": 2339.36,
+    "status": "posted",
+    "description": "eu",
+    "account": {
+      "account_id": "65ba7415809af5ad189dafec",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 2115.87,
+      "balance_after": 1759.28
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 3442.88,
+      "transaction_date": "2024-01-20T01:58:28 -01:00",
+      "merchant_details": {
+        "merchant_name": "magna aliqua",
+        "merchant_id": "65ba74153854cad51a425cdc",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "settled"
+    }
+  },
+  {
+    "transaction_id": "65ba7415e59a5d26aa4741b1",
+    "date": "2023-10-05T07:57:16 -02:00",
+    "amount": 1354.08,
+    "status": "posted",
+    "description": "voluptate",
+    "account": {
+      "account_id": "65ba741539be535ec27b8b2a",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 3956.35,
+      "balance_after": 2263.26
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3579.45,
+      "transaction_date": "2023-12-08T01:49:14 -01:00",
+      "merchant_details": {
+        "merchant_name": "id sunt",
+        "merchant_id": "65ba7415d0d51540b87d2280",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415e4e6fdf767c8cd29",
+    "date": "2023-04-30T05:44:47 -02:00",
+    "amount": 2581.72,
+    "status": "cancelled",
+    "description": "nostrud",
+    "account": {
+      "account_id": "65ba7415f5235d67eab3813d",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 1485.85,
+      "balance_after": 1172.33
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 1741.91,
+      "transaction_date": "2023-03-10T03:17:01 -01:00",
+      "merchant_details": {
+        "merchant_name": "non laborum",
+        "merchant_id": "65ba741590b1002f744a2c2c",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "settled"
+    }
+  },
+  {
+    "transaction_id": "65ba741513592171d6402fc7",
+    "date": "2023-09-07T11:28:33 -02:00",
+    "amount": 3523.1,
+    "status": "cancelled",
+    "description": "ullamco",
+    "account": {
+      "account_id": "65ba7415303952f097733890",
+      "client_id": "a12345b",
+      "account_type": "MMA",
+      "balance_before": 1839.04,
+      "balance_after": 1989.91
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 2109.54,
+      "transaction_date": "2023-10-08T05:07:34 -02:00",
+      "merchant_details": {
+        "merchant_name": "exercitation commodo",
+        "merchant_id": "65ba74159b682a02b6ded6b3",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415faa2a175a76dc942",
+    "date": "2023-01-13T06:18:15 -01:00",
+    "amount": 2316.47,
+    "status": "cancelled",
+    "description": "et",
+    "account": {
+      "account_id": "65ba7415060efb3d29fff355",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 3721.83,
+      "balance_after": 3286.71
+    },
+    "card_payment": {
+      "card_type": "amex",
+      "last_four_digits": 1234,
+      "transaction_amount": 1114.51,
+      "transaction_date": "2023-03-10T10:16:57 -01:00",
+      "merchant_details": {
+        "merchant_name": "ullamco aliqua",
+        "merchant_id": "65ba7415f8e18c26a95e9551",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "declined"
+    }
+  },
+  {
+    "transaction_id": "65ba7415b1cf9dc9d1e9cf32",
+    "date": "2023-07-29T08:50:07 -02:00",
+    "amount": 3203.03,
+    "status": "pending",
+    "description": "dolore",
+    "account": {
+      "account_id": "65ba74157fa850f4b1e0efee",
+      "client_id": "a12345b",
+      "account_type": "CD",
+      "balance_before": 2677.22,
+      "balance_after": 3262.64
+    },
+    "card_payment": {
+      "card_type": "mastercard",
+      "last_four_digits": 1234,
+      "transaction_amount": 3660.8,
+      "transaction_date": "2023-07-06T07:10:49 -02:00",
+      "merchant_details": {
+        "merchant_name": "deserunt consequat",
+        "merchant_id": "65ba7415fb6b60ba11834df7",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
+  },
+  {
+    "transaction_id": "65ba7415c60267654b161b2a",
+    "date": "2023-09-30T01:51:34 -02:00",
+    "amount": 2133.79,
+    "status": "pending",
+    "description": "elit",
+    "account": {
+      "account_id": "65ba7415303bb32cf99372a6",
+      "client_id": "a12345b",
+      "account_type": "savings",
+      "balance_before": 3071.59,
+      "balance_after": 2192.26
+    },
+    "card_payment": {
+      "card_type": "visa",
+      "last_four_digits": 1234,
+      "transaction_amount": 2787.56,
+      "transaction_date": "2024-01-04T04:20:00 -01:00",
+      "merchant_details": {
+        "merchant_name": "velit eiusmod",
+        "merchant_id": "65ba74157fab83bf25f04ea9",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "reverted"
+    }
+  },
+  {
+    "transaction_id": "65ba741539b6ae13eda0f7bc",
+    "date": "2023-12-01T09:22:22 -01:00",
+    "amount": 1671.56,
+    "status": "posted",
+    "description": "labore",
+    "account": {
+      "account_id": "65ba7415ab9e2eadc37e0631",
+      "client_id": "a12345b",
+      "account_type": "checking",
+      "balance_before": 1404.82,
+      "balance_after": 3617.96
+    },
+    "card_payment": {
+      "card_type": "visa",
+      "last_four_digits": 1234,
+      "transaction_amount": 1838.35,
+      "transaction_date": "2023-06-25T01:44:54 -02:00",
+      "merchant_details": {
+        "merchant_name": "eiusmod ullamco",
+        "merchant_id": "65ba7415d356ff70c714d08c",
+        "location": "Online",
+        "category": "Retail"
+      },
+      "status": "processing"
+    }
   }
 ]
