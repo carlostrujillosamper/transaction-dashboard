@@ -47,10 +47,6 @@ const columns = [
     header: "Description",
     cell: (info) => info.renderValue(),
   }),
-  columnHelper.accessor("account.account_id", {
-    header: "Account ID",
-    cell: (info) => info.renderValue(),
-  }),
   columnHelper.accessor("account.account_type", {
     header: "Type",
     cell: (info) => info.renderValue(),

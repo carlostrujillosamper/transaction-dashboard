@@ -5,6 +5,16 @@ import {
   getPaginationRowModel,
   ColumnDef,
 } from "@tanstack/react-table";
+import {
+  Table as ChakraTable,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  TableContainer,
+  Box
+} from "@chakra-ui/react";
 import { Pagination } from "./Pagination";
 
 interface TableProps<T> {
@@ -29,53 +39,44 @@ export function Table<T extends object>({
   });
 
   return (
-    <div>
-      <table>
-        <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <th key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
+    <>
+      <Box border={"1px solid #F4F8FA"} rounded={5} boxShadow={"md"}>
+        <TableContainer>
+          <ChakraTable>
+            <Thead bgColor={"#F4F8FA"}>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <Tr key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => (
+                    <Th key={header.id}>
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                    </Th>
+                  ))}
+                </Tr>
+              ))}
+            </Thead>
+            <Tbody>
+              {table.getRowModel().rows.map((row) => (
+                <Tr key={row.id}>
+                  {row.getVisibleCells().map((cell) => (
+                    <Td key={cell.id}>
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
                       )}
-                </th>
+                    </Td>
+                  ))}
+                </Tr>
               ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-        <tfoot>
-          {table.getFooterGroups().map((footerGroup) => (
-            <tr key={footerGroup.id}>
-              {footerGroup.headers.map((header) => (
-                <th key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.footer,
-                        header.getContext()
-                      )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </tfoot>
-      </table>
-      {hasPagination && <Pagination table={table} pageSizes={pageSizes} />}
-    </div>
+            </Tbody>
+          </ChakraTable>
+          {hasPagination && <Pagination table={table} pageSizes={pageSizes} />}
+        </TableContainer>
+      </Box>
+    </>
   );
 }
