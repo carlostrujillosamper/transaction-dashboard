@@ -9,6 +9,10 @@ import {
   CardPaymentStatus,
 } from "./types";
 import { Table } from "../common/Table/Table";
+import { formatDollarAmount } from "../../utils/formatDollarAmount";
+import { getReadableDate } from "../../utils/getReadableDate";
+import { TransactionStatusTag } from "./TransactionStatusTag";
+import { Text } from "../common/Text/Text";
 
 const defaultData: Transaction[] = MOCKED_TRANSACTIONS.map((transaction) => ({
   ...transaction,
@@ -28,21 +32,24 @@ const columnHelper = createColumnHelper<Transaction>();
 
 const columns = [
   columnHelper.accessor("transaction_id", {
-    header: () => "ID",
+    header: () => "TRANSACTION ID",
     cell: (info) => info.getValue(),
   }),
   columnHelper.accessor("date", {
     header: () => "Date",
-    cell: (info) => info.renderValue(),
+    cell: (info) => <Text content={getReadableDate(info.getValue())} weight={200} />,
   }),
   columnHelper.accessor("amount", {
     header: () => "Amount",
-    cell: (info) => info.renderValue(),
+    cell: (info) => <Text content={formatDollarAmount(info.getValue())} weight={700} />,
   }),
-  columnHelper.accessor("status", {
+columnHelper.accessor("status", {
     header: "Status",
-    cell: (info) => info.renderValue(),
-  }),
+    cell: (info) => {
+        const status = info.getValue() as TransactionStatus;
+        return <TransactionStatusTag status={status} />;
+    },
+}),
   columnHelper.accessor("description", {
     header: "Description",
     cell: (info) => info.renderValue(),

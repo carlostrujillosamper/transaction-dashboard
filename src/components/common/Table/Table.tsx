@@ -61,7 +61,15 @@ export function Table<T extends object>({
             </Thead>
             <Tbody>
               {table.getRowModel().rows.map((row) => (
-                <Tr key={row.id}>
+                <Tr
+                  key={row.id}
+                  transition={"0.2s ease-in-out"}
+                  _hover={{
+                    background: "grey",
+                    color: "white",
+                    cursor: "pointer",
+                  }}
+                >
                   {row.getVisibleCells().map((cell) => (
                     <Td key={cell.id}>
                       {flexRender(
