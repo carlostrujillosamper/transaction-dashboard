@@ -14,7 +14,8 @@ interface IApiError {
 }
 
 interface DashboardContextProps {
-  data: TransactionsResponse[] | undefined;
+  transactions: TransactionsResponse["transactions"] | undefined;
+  totalCountTransactions: number;
   error: IApiError | null;
   isLoading: boolean;
   setClientId: React.Dispatch<React.SetStateAction<string>>;
@@ -77,8 +78,8 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
     }
   }, [fetchNextPage, numberOfPagesLeftWithData]);
   const contextValue: DashboardContextProps = {
-    transactions: totalData,
-    totalCountTransactions: data?.pages[0].totalCountTransactions,
+    transactions: totalData ?? [],
+    totalCountTransactions: data?.pages[0].totalCountTransactions ?? 0,
     error,
     isLoading,
     setClientId,
