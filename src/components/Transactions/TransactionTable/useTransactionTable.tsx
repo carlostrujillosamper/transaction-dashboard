@@ -28,7 +28,7 @@ export function useTransactionTable() {
     );
 
   const [data] = React.useState(() => [...defaultData]);
-  const [transactionId, setTransactionId] = React.useState<string | null>(null);
+  const [transactionId, setTransactionId] = React.useState<string | undefined>(undefined);
 
   const selectedTransaction = React.useMemo(() => {
     if (!transactionId) return null;

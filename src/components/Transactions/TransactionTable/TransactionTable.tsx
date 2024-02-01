@@ -12,7 +12,7 @@ import { Transaction, TransactionStatus } from "../types";
 
 export function TransactionTable() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { data, selectedTransaction, setTransactionId } = useTransactionTable();
+  const { data, selectedTransaction, setTransactionId, transactionId } = useTransactionTable();
   const columnHelper = createColumnHelper<Transaction>();
 
   const columns = [
@@ -56,6 +56,7 @@ export function TransactionTable() {
         onRowClick={onOpen}
         rowDataId={"transaction_id"}
         dataIdSetter={setTransactionId}
+        selectedRowId={transactionId}
       />
       {selectedTransaction && (
         <Modal isOpen={isOpen} onClose={onClose}>

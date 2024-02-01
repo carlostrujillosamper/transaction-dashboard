@@ -14,18 +14,22 @@ import {
   Td,
   TableContainer,
   Box,
+  useOutsideClick,
 } from "@chakra-ui/react";
 import { Pagination } from "./Pagination";
+import React from "react";
 
 interface TableProps<T> {
   data: T[];
+  // the only downside to an otherwise amazing library is that it's hard to avoid this any here when creating a generic table component
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   columns: ColumnDef<T, any>[];
   hasPagination: boolean;
   pageSizes?: number[];
-  onRowClick?:()=> void;
+  onRowClick?: () => void;
   rowDataId?: string;
-  dataIdSetter?: (id : string) => void;
+  dataIdSetter?: (id: string ) => void;
+  selectedRowId?: string ;
 }
 
 export function Table<T extends object>({
@@ -35,13 +39,19 @@ export function Table<T extends object>({
   pageSizes = [5, 10, 20],
   onRowClick,
   rowDataId,
-  dataIdSetter
+  dataIdSetter,
+  selectedRowId,
 }: TableProps<T>) {
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+  });
+  const ref = React.createRef<HTMLTableRowElement>();
+  useOutsideClick({
+    ref: ref,
+    handler: () => dataIdSetter ? dataIdSetter("") : null,
   });
   return (
     <>
@@ -67,17 +77,23 @@ export function Table<T extends object>({
             <Tbody>
               {table.getRowModel().rows.map((row) => (
                 <Tr
+                  ref={ref}
                   key={row.id}
                   _hover={{
                     background: "grey",
                     color: "white",
                     cursor: "pointer",
                   }}
-                  onClick={()=>{
-                    if(!onRowClick) return;
-                    if(!rowDataId) return;
-                    if(!dataIdSetter) return;
-                    dataIdSetter(row.getValue(rowDataId))
+                  bgColor={
+                    selectedRowId === row.getValue(rowDataId ?? "")
+                      ? "grey"
+                      : "white"
+                  }
+                  onClick={() => {
+                    if (!dataIdSetter) return;
+                    if (!onRowClick) return;
+                    if (!rowDataId) return;
+                    dataIdSetter(row.getValue(rowDataId));
                     onRowClick();
                   }}
                 >
