@@ -24,7 +24,7 @@ const defaultData: Transaction[] = MOCKED_TRANSACTIONS.map((transaction) => ({
 
 export const mockData = {
   transactions: defaultData,
-  totalCountTransactions: 531,
+  totalCountTransactions: 120,
   totalAmountInDollars: 100000000,
   pagination: {
     cursor: "eyJwYWdlIjoxMDAsImN1cnNvciI6Im5vbmUifQ==",

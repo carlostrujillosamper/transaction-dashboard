@@ -14,7 +14,7 @@ interface IApiError {
 }
 
 interface DashboardContextProps {
-  data: TransactionsResponse | undefined;
+  data: TransactionsResponse[] | undefined;
   error: IApiError | null;
   isLoading: boolean;
   setClientId: React.Dispatch<React.SetStateAction<string>>;
@@ -36,10 +36,11 @@ export const useDashboardContext = () => {
 };
 
 export function DashboardProvider({ children }: { children: React.ReactNode }) {
-  const MIN_NUMBER_OF_PAGES_TILL_RETRIGGER = 3;
+  const MIN_NUMBER_OF_PAGES_TILL_RETRIGGER = 4;
   const [clientId, setClientId] = useState<string>("");
   const [numberOfPagesLeftWithData, setNumberOfPagesLeftWithData] =
     useState<number>(Number.MAX_SAFE_INTEGER);
+  const [totalData, setTotalData] = useState<TransactionsResponse["transactions"] | null>();
   const fetchDataOptions: FetchTransactionsOptions = {
     clientId: clientId,
     startDate: "ISO-DATE-STRING",
@@ -47,15 +48,14 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
     cursor: "",
     pageSize: 100,
   };
-
-  const { data, error, isLoading } = useInfiniteQuery(
+  
+  const { data, error, isLoading, fetchNextPage } = useInfiniteQuery(
     ["data", fetchDataOptions],
     () => fetchTransactionsByClient(fetchDataOptions),
     {
       keepPreviousData: true,
       onError: (error: IApiError) => error,
       retry: false,
-      // initialData: mockData,
       initialData: () => {
         return {
           pageParams: [],
@@ -63,16 +63,22 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
         };
       },
       getNextPageParam: (lastPage) => {
-        if (numberOfPagesLeftWithData <= MIN_NUMBER_OF_PAGES_TILL_RETRIGGER) {
-          console.log("TRIGGERS NEXT FETCH");
-          console.log(lastPage.pagination.cursor);
-          return lastPage.pagination.cursor;
-        }
+        return lastPage.pagination.cursor;
+      },
+      onSuccess: (data) =>{
+        setTotalData(data.pages.map((page) => page.transactions).flat());
       },
     }
   );
+
+  React.useEffect(() => {
+    if (numberOfPagesLeftWithData <= MIN_NUMBER_OF_PAGES_TILL_RETRIGGER ) {
+      fetchNextPage();
+    }
+  }, [fetchNextPage, numberOfPagesLeftWithData]);
   const contextValue: DashboardContextProps = {
-    data: data?.pages[0],
+    transactions: totalData,
+    totalCountTransactions: data?.pages[0].totalCountTransactions,
     error,
     isLoading,
     setClientId,

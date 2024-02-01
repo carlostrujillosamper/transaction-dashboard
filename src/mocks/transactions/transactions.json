@@ -1398,33 +1398,5 @@
       },
       "status": "reverted"
     }
-  },
-  {
-    "transaction_id": "65baeb36a9dd8b39643ff6f8",
-    "coin": "solana",
-    "date": "2023-11-07T06:19:56",
-    "amount": 47.2,
-    "status": "pending",
-    "description": "elit",
-    "account": {
-      "account_id": "65baeb36e7c08696a0999169",
-      "client_id": "a12345b",
-      "account_type": "CD",
-      "balance_before": 2817.36,
-      "balance_after": 3843.63
-    },
-    "card_payment": {
-      "card_type": "amex",
-      "last_four_digits": 1234,
-      "transaction_amount": 2255.45,
-      "transaction_date": "2023-10-14T10:08:37",
-      "merchant_details": {
-        "merchant_name": "ipsum pariatur",
-        "merchant_id": "65baeb36e5b9c59dfd41309a",
-        "location": "Online",
-        "category": "Retail"
-      },
-      "status": "processing"
-    }
   }
 ]

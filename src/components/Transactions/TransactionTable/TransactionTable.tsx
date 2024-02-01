@@ -11,7 +11,7 @@ import { Coin, Transaction, TransactionStatus } from "../types";
 import { useTransactionTable } from "./useTransactionTable";
 
 export function TransactionTable() {
-  const { data, setNumberOfPagesLeftWithData } = useDashboardContext();
+  const { transactions, totalCountTransactions, setNumberOfPagesLeftWithData } = useDashboardContext();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -53,16 +53,16 @@ export function TransactionTable() {
   ];
   return (
     <>
-      {data?.transactions?.length && (
+      {transactions?.length && (
         <Table
-          data={data?.transactions ?? []}
+          data={transactions}
           columns={columns}
           hasPagination
           onRowClick={onOpen}
           rowDataId={"transaction_id"}
           dataIdSetter={setTransactionId}
           selectedRowId={transactionId}
-          totalNumberOfRows={data?.totalCountTransactions}
+          totalNumberOfRows={totalCountTransactions}
           setNumberOfPagesLeftWithData={setNumberOfPagesLeftWithData}
         />
       )}

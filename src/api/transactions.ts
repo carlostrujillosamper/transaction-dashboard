@@ -56,19 +56,19 @@ export const fetchTransactionsByClient = async ({
     /////////////////////////////////////////////////////////////////
 
     // fake implementation of the fetch call
+
     if (clientId && clientId === "option2") {
       throw new Error("Client not found Status: 404");
-    } else {
-      return {
-        transactions: defaultData,
-        totalCountTransactions: 531,
-        totalAmountInDollars: 100000000,
-        pagination: {
-          cursor: "eyJwYWdlIjoxMDAsImN1cnNvciI6Im5vbmUifQ==",
-          pageSize: 100,
-        },
-      };
     }
+    return {
+      transactions: defaultData,
+      totalCountTransactions: 120,
+      totalAmountInDollars: 100000000,
+      pagination: {
+        cursor: "eyJwYWdlIjoxMDAsImN1cnNvciI6Im5vbmUifQ==",
+        pageSize: 100,
+      },
+    };
   } catch (error) {
     console.error("Error fetching transactions:", error);
     throw error;

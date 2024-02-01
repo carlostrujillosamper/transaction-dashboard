@@ -1,5 +1,6 @@
 import { Box, Button, HStack, Select } from "@chakra-ui/react";
 import { Table } from "@tanstack/react-table";
+import React from "react";
 
 type PaginationProps<T> = {
   table: Table<T>;
@@ -13,16 +14,17 @@ export function Pagination<T extends object>({
   totalNumberOfRows,
   setNumberOfPagesLeftWithData,
 }: PaginationProps<T>) {
+  const [pageIndex, setPageIndex] = React.useState(0);
+  const totalNumberOfPages = Math.ceil(
+    totalNumberOfRows / table.getState().pagination.pageSize
+  );
   return (
     <Box padding={5} w="100%">
       <HStack w="100%" justifyContent={"space-between"}>
         <Box>
           <span>
             <strong>
-              {table.getState().pagination.pageIndex + 1} of{" "}
-              {Math.ceil(
-                totalNumberOfRows / table.getState().pagination.pageSize
-              )}
+              {pageIndex + 1} of {totalNumberOfPages}
             </strong>
           </span>
         </Box>
@@ -45,8 +47,11 @@ export function Pagination<T extends object>({
         </Box>
         <Box>
           <Button
-            onClick={() => table.previousPage()}
-            isDisabled={!table.getCanPreviousPage()}
+            onClick={() => {
+              table.setPageIndex(pageIndex - 1);
+              setPageIndex(pageIndex - 1);
+            }}
+            isDisabled={pageIndex === 0}
             mr={2}
             w="100px"
           >
@@ -54,14 +59,15 @@ export function Pagination<T extends object>({
           </Button>
           <Button
             onClick={() => {
-              table.nextPage();
+              table.setPageIndex(pageIndex + 1);
+              setPageIndex(pageIndex + 1);
               if (setNumberOfPagesLeftWithData) {
                 setNumberOfPagesLeftWithData(
                   table.getPageCount() - table.getState().pagination.pageIndex
                 );
               }
             }}
-            isDisabled={!table.getCanNextPage()}
+            isDisabled={pageIndex + 1 === totalNumberOfPages}
             mr={2}
             w="100px"
           >
