@@ -77,6 +77,7 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
       fetchNextPage();
     }
   }, [fetchNextPage, numberOfPagesLeftWithData]);
+  
   const contextValue: DashboardContextProps = {
     transactions: totalData ?? [],
     totalCountTransactions: data?.pages[0].totalCountTransactions ?? 0,

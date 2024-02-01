@@ -9,6 +9,17 @@ import {
 import MOCKED_TRANSACTIONS from "../mocks/transactions/transactions.json";
 import { FetchTransactionsOptions, TransactionsResponse } from "./types";
 
+// Get Transactions:
+
+// ## Endpoint: GET /api/transactions
+// ## Description: Retrieve a list of banking transactions.
+// ## Query Parameters:
+//    clientId (string, required): The unique identifier for the client.
+//    startDate (string, optional): Start date for filtering transactions (format: 'ISO').
+//    endDate (string, optional): End date for filtering transactions (format: 'ISO').
+// Response:
+// 200 OK with JSON body:
+
 export const fetchTransactionsByClient = async ({
   clientId,
   startDate,
