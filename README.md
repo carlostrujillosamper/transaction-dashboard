@@ -1,5 +1,7 @@
 # Transactions List Project
 
+![App in action](<CleanShot 2024-02-01 at 18.45.25.gif>)
+
 ## Overview
 
 This project is a simple transactions list application built using React, Chakra UI, React-Table, and React-Query. It allows users to view a list of transactions and perform basic operations.
