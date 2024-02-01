@@ -2,11 +2,15 @@ import { Transaction } from "../components/Transactions/types";
 
 export interface TransactionsResponse {
   transactions: Transaction[];
-  totalTransactions: number;
+  totalCountTransactions: number;
   totalAmountInDollars: number;
+  pagination: {
+    cursor: string;
+    pageSize: number;
+  };
 }
 
-export  interface FetchTransactionsOptions {
+export interface FetchTransactionsOptions {
   clientId: string;
   startDate?: string;
   endDate?: string;

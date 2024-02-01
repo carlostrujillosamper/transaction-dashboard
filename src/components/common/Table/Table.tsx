@@ -1,23 +1,23 @@
 import {
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-  getPaginationRowModel,
-  ColumnDef,
-} from "@tanstack/react-table";
-import {
-  Table as ChakraTable,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-  TableContainer,
   Box,
+  Table as ChakraTable,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
   useOutsideClick,
 } from "@chakra-ui/react";
-import { Pagination } from "./Pagination";
+import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  getPaginationRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
 import React from "react";
+import { Pagination } from "./Pagination";
 
 interface TableProps<T> {
   data: T[];
@@ -28,8 +28,10 @@ interface TableProps<T> {
   pageSizes?: number[];
   onRowClick?: () => void;
   rowDataId?: string;
-  dataIdSetter?: (id: string ) => void;
-  selectedRowId?: string ;
+  dataIdSetter?: (id: string) => void;
+  selectedRowId?: string;
+  totalNumberOfRows: number;
+  setNumberOfPagesLeftWithData?: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export function Table<T extends object>({
@@ -41,6 +43,8 @@ export function Table<T extends object>({
   rowDataId,
   dataIdSetter,
   selectedRowId,
+  totalNumberOfRows,
+  setNumberOfPagesLeftWithData,
 }: TableProps<T>) {
   const table = useReactTable({
     data,
@@ -51,7 +55,7 @@ export function Table<T extends object>({
   const ref = React.createRef<HTMLTableRowElement>();
   useOutsideClick({
     ref: ref,
-    handler: () => dataIdSetter ? dataIdSetter("") : null,
+    handler: () => (dataIdSetter ? dataIdSetter("") : null),
   });
   return (
     <>
@@ -109,7 +113,14 @@ export function Table<T extends object>({
               ))}
             </Tbody>
           </ChakraTable>
-          {hasPagination && <Pagination table={table} pageSizes={pageSizes} />}
+          {hasPagination && (
+            <Pagination
+              table={table}
+              pageSizes={pageSizes}
+              totalNumberOfRows={totalNumberOfRows}
+              setNumberOfPagesLeftWithData={setNumberOfPagesLeftWithData}
+            />
+          )}
         </TableContainer>
       </Box>
     </>

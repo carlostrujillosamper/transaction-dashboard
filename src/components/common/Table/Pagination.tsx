@@ -1,14 +1,17 @@
+import { Box, Button, HStack, Select } from "@chakra-ui/react";
 import { Table } from "@tanstack/react-table";
-import { Button, Box, Select, HStack } from "@chakra-ui/react";
 
 type PaginationProps<T> = {
   table: Table<T>;
   pageSizes: number[];
+  totalNumberOfRows: number;
+  setNumberOfPagesLeftWithData?: React.Dispatch<React.SetStateAction<number>>;
 };
-
 export function Pagination<T extends object>({
   table,
   pageSizes,
+  totalNumberOfRows,
+  setNumberOfPagesLeftWithData,
 }: PaginationProps<T>) {
   return (
     <Box padding={5} w="100%">
@@ -17,7 +20,9 @@ export function Pagination<T extends object>({
           <span>
             <strong>
               {table.getState().pagination.pageIndex + 1} of{" "}
-              {table.getPageCount()}
+              {Math.ceil(
+                totalNumberOfRows / table.getState().pagination.pageSize
+              )}
             </strong>
           </span>
         </Box>
@@ -48,7 +53,14 @@ export function Pagination<T extends object>({
             {"Previous"}
           </Button>
           <Button
-            onClick={() => table.nextPage()}
+            onClick={() => {
+              table.nextPage();
+              if (setNumberOfPagesLeftWithData) {
+                setNumberOfPagesLeftWithData(
+                  table.getPageCount() - table.getState().pagination.pageIndex
+                );
+              }
+            }}
             isDisabled={!table.getCanNextPage()}
             mr={2}
             w="100px"

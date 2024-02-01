@@ -1,3 +1,5 @@
+import { Alert, AlertIcon, AlertTitle, AlertDescription } from "@chakra-ui/react";
+
 enum HttpStatus {
   BadRequest = 400,
   Unauthorized = 401,
@@ -30,18 +32,24 @@ export function HttpError({ status, message } : HttpErrorProps)  {
   };
 
   return (
-    <div
-      style={{
-        color: "red",
-        border: "1px solid red",
-        padding: "10px",
-        borderRadius: "5px",
-        margin: "10px 0",
-      }}
-    >
-      <strong>Error {status ? `(${status}):` : ":"}</strong>{" "}
-      {message || getStatusMessage()}
-    </div>
+      <Alert
+        status="error"
+        variant="subtle"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        textAlign="center"
+        height="200px"
+        w="60vw"
+      >
+        <AlertIcon boxSize="40px" mr={0} />
+        <AlertTitle mt={4} mb={1} fontSize="lg">
+         Network Error
+        </AlertTitle>
+        <AlertDescription maxWidth="sm">
+          {message || getStatusMessage()}
+        </AlertDescription>
+      </Alert>
   );
 }
 

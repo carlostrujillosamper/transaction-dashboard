@@ -1,24 +1,29 @@
-import { useDisclosure } from "@chakra-ui/react";
+import { Text, useDisclosure } from "@chakra-ui/react";
+import { createColumnHelper } from "@tanstack/react-table";
+import { useDashboardContext } from "../../../layouts/Dashboard/useDashboardContext";
+import { getReadableDate } from "../../../utils/getReadableDate";
 import { Modal } from "../../common/Modal/Modal";
 import { Table } from "../../common/Table/Table";
-import { TransactionCardDetail } from "../TransactionCardDetail";
-import { useTransactionTable } from "./useTransactionTable";
-import { createColumnHelper } from "@tanstack/react-table";
-import { Text } from "@chakra-ui/react";
-import { getReadableDate } from "../../../utils/getReadableDate";
 import { CryptoLogo } from "../CryptoLogo";
+import { TransactionCardDetail } from "../TransactionCardDetail";
 import { TransactionStatusTag } from "../TransactionStatusTag";
-import { Transaction, TransactionStatus } from "../types";
+import { Coin, Transaction, TransactionStatus } from "../types";
+import { useTransactionTable } from "./useTransactionTable";
 
 export function TransactionTable() {
+  const { data, setNumberOfPagesLeftWithData } = useDashboardContext();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { data, selectedTransaction, setTransactionId, transactionId } = useTransactionTable();
+
+  const { selectedTransaction, setTransactionId, transactionId } =
+    useTransactionTable();
+
   const columnHelper = createColumnHelper<Transaction>();
 
   const columns = [
     columnHelper.accessor("coin", {
       header: () => "Crypto",
-      cell: (info) => <CryptoLogo coin={info.getValue()} />,
+      cell: (info) => <CryptoLogo coin={info.getValue() as Coin} />,
     }),
     columnHelper.accessor("transaction_id", {
       header: () => "TRANSACTION ID",
@@ -46,18 +51,21 @@ export function TransactionTable() {
       cell: (info) => <Text fontWeight={200}>{info.getValue()}</Text>,
     }),
   ];
-
   return (
     <>
-      <Table
-        data={data}
-        columns={columns}
-        hasPagination
-        onRowClick={onOpen}
-        rowDataId={"transaction_id"}
-        dataIdSetter={setTransactionId}
-        selectedRowId={transactionId}
-      />
+      {data?.transactions?.length && (
+        <Table
+          data={data?.transactions ?? []}
+          columns={columns}
+          hasPagination
+          onRowClick={onOpen}
+          rowDataId={"transaction_id"}
+          dataIdSetter={setTransactionId}
+          selectedRowId={transactionId}
+          totalNumberOfRows={data?.totalCountTransactions}
+          setNumberOfPagesLeftWithData={setNumberOfPagesLeftWithData}
+        />
+      )}
       {selectedTransaction && (
         <Modal isOpen={isOpen} onClose={onClose}>
           <TransactionCardDetail transaction={selectedTransaction} />
