@@ -1,4 +1,4 @@
-import { Tag } from "../common/Tag/Tag";
+import { Tag } from "@chakra-ui/react";
 
 export function CreditCardStatus({
   status,
@@ -7,13 +7,13 @@ export function CreditCardStatus({
 }) {
   switch (status) {
     case "reverted":
-      return <Tag label="Reverted" color="red" />;
+      return <Tag colorScheme="red">Reverted</Tag>;
     case "declined":
-      return <Tag label="Declined" color="red" />;
+      return <Tag colorScheme="red">Declined</Tag>;
     case "settled":
-      return <Tag label="Settled" color="green" />;
+      return <Tag colorScheme="green">Settled</Tag>;
     case "processing":
-        return <Tag label="Processing" color="yellow" />;
+        return <Tag colorScheme="yellow">Processing</Tag>;
     default:
       return null;
   }

@@ -1,5 +1,5 @@
 import { TransactionStatus } from "./types";
-import { Tag } from "../common/Tag/Tag";
+import { Tag } from "@chakra-ui/react";
 
 export function TransactionStatusTag({
   status,
@@ -8,11 +8,11 @@ export function TransactionStatusTag({
 }) {
   switch (status) {
     case TransactionStatus.PENDING:
-      return <Tag label="Pending" color="yellow" />;
+      return <Tag colorScheme="yellow">Pending</Tag>;
     case TransactionStatus.CANCELLED:
-      return <Tag label="Cancelled" color="red" />;
+      return <Tag colorScheme="red">Cancelled</Tag>;
     case TransactionStatus.POSTED:
-      return <Tag label="Posted" color="green" />;
+      return <Tag colorScheme="green">Posted</Tag>;
     default:
       return null;
   }

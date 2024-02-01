@@ -6,10 +6,10 @@ import {
   Text,
   HStack,
   Flex,
+  Tag
 } from "@chakra-ui/react";
 import { Transaction } from "./types";
 import { formatDollarAmount } from "../../utils/formatDollarAmount";
-import { Tag } from "../common/Tag/Tag";
 import { getReadableDate } from "../../utils/getReadableDate";
 import { CreditCardStatus } from "./CreditCardStatusTag";
 import { CreditCardLogo } from "./CreditCardLogo";
@@ -34,11 +34,9 @@ export function TransactionCardDetail({
           </Heading>
           <HStack>
             <Tag
-              label={transaction.card_payment.merchant_details.category}
-            ></Tag>
+            >{transaction.card_payment.merchant_details.category}</Tag>
             <Tag
-              label={transaction.card_payment.merchant_details.location}
-            ></Tag>
+            >{transaction.card_payment.merchant_details.location}</Tag>
           </HStack>
           <Text>
             {getReadableDate(transaction.card_payment.transaction_date)}

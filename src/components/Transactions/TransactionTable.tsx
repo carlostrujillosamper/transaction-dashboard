@@ -1,6 +1,6 @@
 import * as React from "react";
 import { createColumnHelper } from "@tanstack/react-table";
-import { useDisclosure } from "@chakra-ui/react";
+import { useDisclosure, Text } from "@chakra-ui/react";
 
 import MOCKED_TRANSACTIONS from "../../mocks/transactions/transactions.json";
 import {
@@ -13,7 +13,6 @@ import {
 import { Table } from "../common/Table/Table";
 import { getReadableDate } from "../../utils/getReadableDate";
 import { TransactionStatusTag } from "./TransactionStatusTag";
-import { Text } from "../common/Text/Text";
 import { Modal } from "../common/Modal/Modal";
 import { TransactionCardDetail } from "./TransactionCardDetail";
 import { CryptoLogo } from "./CryptoLogo";
@@ -41,17 +40,17 @@ const columns = [
   }),
   columnHelper.accessor("transaction_id", {
     header: () => "TRANSACTION ID",
-    cell: (info) => <Text content={info.getValue()} weight={400} />,
+    cell: (info) => <Text fontWeight={400} >{info.getValue()}</Text>,
   }),
   columnHelper.accessor("date", {
     header: () => "Date",
     cell: (info) => (
-      <Text content={getReadableDate(info.getValue())} weight={200} />
+      <Text  fontWeight={200} >{getReadableDate(info.getValue())}</Text>
     ),
   }),
   columnHelper.accessor("amount", {
     header: () => "Amount",
-    cell: (info) => <Text content={`${info.getValue()}`} weight={700} />,
+    cell: (info) => <Text  fontWeight={700} >{`${info.getValue()}`}</Text>,
   }),
   columnHelper.accessor("status", {
     header: "Status",
@@ -62,7 +61,7 @@ const columns = [
   }),
   columnHelper.accessor("description", {
     header: "Description",
-    cell: (info) => <Text content={info.getValue()} weight={200} />,
+    cell: (info) => <Text fontWeight={200} >{info.getValue()}</Text>,
   }),
 ];
 
