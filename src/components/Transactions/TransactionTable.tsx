@@ -1,5 +1,7 @@
 import * as React from "react";
 import { createColumnHelper } from "@tanstack/react-table";
+import { useDisclosure } from "@chakra-ui/react";
+
 import MOCKED_TRANSACTIONS from "../../mocks/transactions/transactions.json";
 import {
   Transaction,
@@ -9,10 +11,12 @@ import {
   CardPaymentStatus,
 } from "./types";
 import { Table } from "../common/Table/Table";
-import { formatDollarAmount } from "../../utils/formatDollarAmount";
 import { getReadableDate } from "../../utils/getReadableDate";
 import { TransactionStatusTag } from "./TransactionStatusTag";
 import { Text } from "../common/Text/Text";
+import { Modal } from "../common/Modal/Modal";
+import { TransactionCardDetail } from "./TransactionCardDetail";
+import { CryptoLogo } from "./CryptoLogo";
 
 const defaultData: Transaction[] = MOCKED_TRANSACTIONS.map((transaction) => ({
   ...transaction,
@@ -31,37 +35,63 @@ const defaultData: Transaction[] = MOCKED_TRANSACTIONS.map((transaction) => ({
 const columnHelper = createColumnHelper<Transaction>();
 
 const columns = [
+  columnHelper.accessor("coin", {
+    header: () => "Crypto",
+    cell: (info) => <CryptoLogo coin={info.getValue()} />,
+  }),
   columnHelper.accessor("transaction_id", {
     header: () => "TRANSACTION ID",
-    cell: (info) => info.getValue(),
+    cell: (info) => <Text content={info.getValue()} weight={400} />,
   }),
   columnHelper.accessor("date", {
     header: () => "Date",
-    cell: (info) => <Text content={getReadableDate(info.getValue())} weight={200} />,
+    cell: (info) => (
+      <Text content={getReadableDate(info.getValue())} weight={200} />
+    ),
   }),
   columnHelper.accessor("amount", {
     header: () => "Amount",
-    cell: (info) => <Text content={formatDollarAmount(info.getValue())} weight={700} />,
+    cell: (info) => <Text content={`${info.getValue()}`} weight={700} />,
   }),
-columnHelper.accessor("status", {
+  columnHelper.accessor("status", {
     header: "Status",
     cell: (info) => {
-        const status = info.getValue() as TransactionStatus;
-        return <TransactionStatusTag status={status} />;
+      const status = info.getValue() as TransactionStatus;
+      return <TransactionStatusTag status={status} />;
     },
-}),
+  }),
   columnHelper.accessor("description", {
     header: "Description",
-    cell: (info) => info.renderValue(),
-  }),
-  columnHelper.accessor("account.account_type", {
-    header: "Type",
-    cell: (info) => info.renderValue(),
+    cell: (info) => <Text content={info.getValue()} weight={200} />,
   }),
 ];
 
 export function TransactionTable() {
   const [data] = React.useState(() => [...defaultData]);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [transactionId, setTransactionId] = React.useState<string | null>(null);
 
-  return <Table data={data} columns={columns} hasPagination />;
+  const selectedTransaction = React.useMemo(() => {
+    if (!transactionId) return null;
+    return data.find(
+      (transaction) => transaction.transaction_id === transactionId
+    );
+  }, [data, transactionId]);
+  return (
+    <>
+      <Table
+        data={data}
+        columns={columns}
+        hasPagination
+        onRowClick={onOpen}
+        rowDataId={"transaction_id"}
+        dataIdSetter={setTransactionId}
+      />
+      {selectedTransaction && (
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <TransactionCardDetail transaction={selectedTransaction} />
+        </Modal>
+      )}
+    </>
+  );
 }

@@ -13,7 +13,7 @@ export function Pagination<T extends object>({
   return (
     <Box padding={5} w="100%">
       <HStack w="100%" justifyContent={"space-between"}>
-        <Box >
+        <Box>
           <span>
             <strong>
               {table.getState().pagination.pageIndex + 1} of{" "}
@@ -21,8 +21,8 @@ export function Pagination<T extends object>({
             </strong>
           </span>
         </Box>
-        <Box >
-          <Box >
+        <Box>
+          <Box>
             <Select
               value={table.getState().pagination.pageSize}
               onChange={(e) => {
@@ -38,21 +38,19 @@ export function Pagination<T extends object>({
             </Select>
           </Box>
         </Box>
-        <Box >
+        <Box>
           <Button
             onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
+            isDisabled={!table.getCanPreviousPage()}
             mr={2}
             w="100px"
           >
             {"Previous"}
           </Button>
           <Button
-            onClick={() => {
-              table.nextPage();
-              console.log(table.getCanNextPage());
-            }}
-            disabled={table.getCanNextPage()}
+            onClick={() => table.nextPage()}
+            isDisabled={!table.getCanNextPage()}
+            mr={2}
             w="100px"
           >
             {"Next"}

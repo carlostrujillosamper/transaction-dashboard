@@ -13,7 +13,7 @@ import {
   Th,
   Td,
   TableContainer,
-  Box
+  Box,
 } from "@chakra-ui/react";
 import { Pagination } from "./Pagination";
 
@@ -23,6 +23,9 @@ interface TableProps<T> {
   columns: ColumnDef<T, any>[];
   hasPagination: boolean;
   pageSizes?: number[];
+  onRowClick?:()=> void;
+  rowDataId?: string;
+  dataIdSetter?: (id : string) => void;
 }
 
 export function Table<T extends object>({
@@ -30,6 +33,9 @@ export function Table<T extends object>({
   columns,
   hasPagination,
   pageSizes = [5, 10, 20],
+  onRowClick,
+  rowDataId,
+  dataIdSetter
 }: TableProps<T>) {
   const table = useReactTable({
     data,
@@ -37,7 +43,6 @@ export function Table<T extends object>({
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
-
   return (
     <>
       <Box border={"1px solid #F4F8FA"} rounded={5} boxShadow={"md"}>
@@ -63,11 +68,17 @@ export function Table<T extends object>({
               {table.getRowModel().rows.map((row) => (
                 <Tr
                   key={row.id}
-                  transition={"0.2s ease-in-out"}
                   _hover={{
                     background: "grey",
                     color: "white",
                     cursor: "pointer",
+                  }}
+                  onClick={()=>{
+                    if(!onRowClick) return;
+                    if(!rowDataId) return;
+                    if(!dataIdSetter) return;
+                    dataIdSetter(row.getValue(rowDataId))
+                    onRowClick();
                   }}
                 >
                   {row.getVisibleCells().map((cell) => (

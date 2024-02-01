@@ -1,0 +1,56 @@
+import {
+  Card,
+  CardBody,
+  Stack,
+  Heading,
+  Text,
+  HStack,
+  Flex,
+} from "@chakra-ui/react";
+import { Transaction } from "./types";
+import { formatDollarAmount } from "../../utils/formatDollarAmount";
+import { Tag } from "../common/Tag/Tag";
+import { getReadableDate } from "../../utils/getReadableDate";
+import { CreditCardStatus } from "./CreditCardStatusTag";
+import { CreditCardLogo } from "./CreditCardLogo";
+
+interface TransactionCardDetailProps {
+  transaction: Transaction;
+}
+
+export function TransactionCardDetail({
+  transaction,
+}: TransactionCardDetailProps) {
+  return (
+    <Card w="100%">
+      <CreditCardLogo
+        creditCard={transaction.card_payment.card_type}
+        lastFourDigits={transaction.card_payment.last_four_digits}
+      />
+      <CardBody>
+        <Stack mt="6" spacing="3">
+          <Heading size="md">
+            {transaction.card_payment.merchant_details.merchant_name}
+          </Heading>
+          <HStack>
+            <Tag
+              label={transaction.card_payment.merchant_details.category}
+            ></Tag>
+            <Tag
+              label={transaction.card_payment.merchant_details.location}
+            ></Tag>
+          </HStack>
+          <Text>
+            {getReadableDate(transaction.card_payment.transaction_date)}
+          </Text>
+          <Flex justifyContent={"space-between"}>
+            <Text fontSize="2xl">
+              {formatDollarAmount(transaction.card_payment.transaction_amount)}
+            </Text>
+            <CreditCardStatus status={transaction.card_payment.status} />
+          </Flex>
+        </Stack>
+      </CardBody>
+    </Card>
+  );
+}
