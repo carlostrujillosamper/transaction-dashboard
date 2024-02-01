@@ -3,11 +3,11 @@ import { Transaction } from "../components/Transactions/types";
 export interface TransactionsResponse {
   transactions: Transaction[];
   totalTransactions: number;
-  totalAmount: number;
+  totalAmountInDollars: number;
 }
 
 export  interface FetchTransactionsOptions {
-  accountId: string;
+  clientId: string;
   startDate?: string;
   endDate?: string;
   cursor?: string; // Cursor for pagination

@@ -1,15 +1,15 @@
 import { FetchTransactionsOptions, TransactionsResponse } from "./types";
 const BASE_URL = "/api/transactions";
 
-export const fetchTransactions = async ({
-  accountId,
+export const fetchTransactionsByClient = async ({
+  clientId,
   startDate,
   endDate,
   cursor,
   pageSize = 100,
 }: FetchTransactionsOptions): Promise<TransactionsResponse> => {
   try {
-    const queryString = `?accountId=${accountId}${
+    const queryString = `?clientId=${clientId}${
       startDate ? `&startDate=${startDate}` : ""
     }${endDate ? `&endDate=${endDate}` : ""}${
       cursor ? `&cursor=${cursor}` : ""

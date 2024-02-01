@@ -1,11 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import "./App.css";
-import { TransactionTable } from "./components/Transactions/TransactionTable/TransactionTable";
+import { Dashboard } from "./layouts/Dashboard";
 
 function App() {
   return (
     <ChakraProvider>
-      <TransactionTable />
+      <Dashboard />
     </ChakraProvider>
   );
 }
