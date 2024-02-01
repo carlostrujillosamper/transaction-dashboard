@@ -1,6 +1,6 @@
-import "./App.css";
 import { ChakraProvider } from "@chakra-ui/react";
-import { TransactionTable } from "./components/Transactions/TransactionTable";
+import "./App.css";
+import { TransactionTable } from "./components/Transactions/TransactionTable/TransactionTable";
 
 function App() {
   return (
