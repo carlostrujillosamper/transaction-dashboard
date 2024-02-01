@@ -5,6 +5,7 @@ import {
   AccountType,
   CardPaymentStatus,
   CardType,
+  Coin,
   Transaction,
   TransactionStatus,
 } from "../types";
@@ -14,6 +15,7 @@ export function useTransactionTable() {
     const defaultData: Transaction[] = MOCKED_TRANSACTIONS.map(
       (transaction) => ({
         ...transaction,
+        coin: transaction.coin as Coin,
         status: transaction.status as TransactionStatus,
         account: {
           ...transaction.account,

@@ -12,7 +12,7 @@ import { Transaction } from "./types";
 import { formatDollarAmount } from "../../utils/formatDollarAmount";
 import { getReadableDate } from "../../utils/getReadableDate";
 import { CreditCardStatus } from "./CreditCardStatusTag";
-import { CreditCardLogo } from "./CreditCardLogo";
+import { CreditCardBanner } from "./CreditCardBanner";
 
 interface TransactionCardDetailProps {
   transaction: Transaction;
@@ -23,7 +23,7 @@ export function TransactionCardDetail({
 }: TransactionCardDetailProps) {
   return (
     <Card w="100%">
-      <CreditCardLogo
+      <CreditCardBanner
         creditCard={transaction.card_payment.card_type}
         lastFourDigits={transaction.card_payment.last_four_digits}
       />

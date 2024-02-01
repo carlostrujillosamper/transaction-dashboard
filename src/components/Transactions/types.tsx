@@ -3,7 +3,7 @@ export interface Transaction {
   transaction_id: string;
   date: string;
   amount: number;
-  status: "pending" | "posted" | "cancelled";
+  status: TransactionStatus;
   description: string;
   account: Account;
   card_payment: CardPayment;
@@ -12,13 +12,13 @@ export interface Transaction {
 export interface Account {
   account_id: string;
   client_id: string;
-  account_type: "checking" | "savings" | "MMA" | "CD";
+  account_type: AccountType;
   balance_before: number;
   balance_after: number;
 }
 
 export interface CardPayment {
-  card_type: "visa" | "mastercard" | "amex";
+  card_type: CardType;
   last_four_digits: number;
   transaction_amount: number;
   transaction_date: string;
@@ -28,7 +28,7 @@ export interface CardPayment {
     location: string;
     category: string;
   };
-  status: "reverted" | "declined" | "settled" | "processing";
+  status: CardPaymentStatus;
 }
 
 export enum TransactionStatus {
@@ -55,4 +55,11 @@ export enum CardPaymentStatus {
   DECLINED = "declined",
   SETTLED = "settled",
   PROCESSING = "processing",
+}
+
+export enum Coin {
+  BITCOIN = "bitcoin",
+  ETHEREUM = "ethereum",
+  SOLANA = "solana",
+  DOGECOIN = "dogecoin"
 }
