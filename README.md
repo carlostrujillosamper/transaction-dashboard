@@ -43,9 +43,11 @@ To get started with the project, follow these steps:
 
 ## Usage
 
-After installing the dependencies, you can run the project and start the development server with the following command:
+After installing the dependencies, you can run the project and start the development server with the following command
 
-``` npm run dev
+   ```bash
+   npm run dev
+   ```
 
 This will start the development server, and you can view the application by opening your browser and navigating to http://localhost:5173/ , you can change the port if its already in use on your local machine on the package.json
 
@@ -56,6 +58,8 @@ To run the tests for the project, use the following command:
 
     ```bash
     npm run test
+    ```
+    
 
 There is only one test available, definitely something I would want to improve
 
