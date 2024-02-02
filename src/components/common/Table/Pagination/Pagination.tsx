@@ -1,6 +1,7 @@
 import { Box, Button, HStack, Select } from "@chakra-ui/react";
 import { Table } from "@tanstack/react-table";
 import React from "react";
+import { usePagination } from "./usePagination";
 
 type PaginationProps<T> = {
   table: Table<T>;
@@ -14,7 +15,7 @@ export function Pagination<T extends object>({
   totalNumberOfRows,
   setNumberOfPagesLeftWithData,
 }: PaginationProps<T>) {
-  const [pageIndex, setPageIndex] = React.useState(0);
+  const { pageIndex, setPageIndex } = usePagination();
   const totalNumberOfPages = Math.ceil(
     totalNumberOfRows / table.getState().pagination.pageSize
   );

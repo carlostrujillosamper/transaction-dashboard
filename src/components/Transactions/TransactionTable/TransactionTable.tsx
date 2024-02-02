@@ -1,6 +1,5 @@
 import { Text, useDisclosure } from "@chakra-ui/react";
 import { createColumnHelper } from "@tanstack/react-table";
-import { useDashboardContext } from "../../../layouts/Dashboard/useDashboardContext";
 import { getReadableDate } from "../../../utils/getReadableDate";
 import { Modal } from "../../common/Modal/Modal";
 import { Table } from "../../common/Table/Table";
@@ -9,13 +8,14 @@ import { TransactionCardDetail } from "../TransactionCardDetail";
 import { TransactionStatusTag } from "../TransactionStatusTag";
 import { Coin, Transaction, TransactionStatus } from "../types";
 import { useTransactionTable } from "./useTransactionTable";
+import { useDashboardContext } from "../../../context/Dashboard/useDashboardContext";
 
 export function TransactionTable() {
   const { transactions, totalCountTransactions, setNumberOfPagesLeftWithData } = useDashboardContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { selectedTransaction, setTransactionId, transactionId } =
-    useTransactionTable();
+    useTransactionTable(transactions ?? []);
 
   const columnHelper = createColumnHelper<Transaction>();
 

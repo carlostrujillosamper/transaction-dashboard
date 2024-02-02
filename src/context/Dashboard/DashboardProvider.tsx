@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import { useState, useEffect } from "react";
 import { useInfiniteQuery } from "react-query";
 import { fetchTransactionsByClient } from "../../api/transactions";
 import {
@@ -6,41 +6,17 @@ import {
   TransactionsResponse,
 } from "../../api/types";
 import { mockData } from "../../mocks/transactions/mockData";
-
-interface IApiError {
-  message: string;
-  description: string;
-  statusCode: string | number;
-}
-
-interface DashboardContextProps {
-  transactions: TransactionsResponse["transactions"] | undefined;
-  totalCountTransactions: number;
-  error: IApiError | null;
-  isLoading: boolean;
-  setClientId: React.Dispatch<React.SetStateAction<string>>;
-  setNumberOfPagesLeftWithData: React.Dispatch<React.SetStateAction<number>>;
-}
-
-const DashboardContext = createContext<DashboardContextProps>(
-  {} as DashboardContextProps
-);
-
-export const useDashboardContext = () => {
-  const context = useContext(DashboardContext);
-  if (!context) {
-    throw new Error(
-      "useDashboardContext must be used within a DashboardProvider"
-    );
-  }
-  return context;
-};
+import { DashboardContextProps, IApiError } from "./types";
+import { DashboardContext } from "./DashboardContext";
 
 export function DashboardProvider({ children }: { children: React.ReactNode }) {
   const MIN_NUMBER_OF_PAGES_TILL_RETRIGGER = 4;
+
   const [clientId, setClientId] = useState<string>("");
+
   const [numberOfPagesLeftWithData, setNumberOfPagesLeftWithData] =
     useState<number>(Number.MAX_SAFE_INTEGER);
+
   const [totalData, setTotalData] = useState<
     TransactionsResponse["transactions"] | null
   >();
@@ -78,7 +54,7 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
       },
     }
   );
-  React.useEffect(() => {
+  useEffect(() => {
     if (numberOfPagesLeftWithData <= MIN_NUMBER_OF_PAGES_TILL_RETRIGGER) {
       setNumberOfFetches((prev) => prev + 1);
       fetchNextPage();

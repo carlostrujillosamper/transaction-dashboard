@@ -1,7 +1,7 @@
 import { Box, Heading, Select, Spinner, Text, VStack } from "@chakra-ui/react";
 import { TransactionTable } from "../../components/Transactions/TransactionTable/TransactionTable";
 import { HttpError } from "../../components/common/HTTPError/HTTPError";
-import { useDashboardContext } from "./useDashboardContext";
+import { useDashboardContext } from "../../context/Dashboard/useDashboardContext";
 
 export function Dashboard() {
   const { error, isLoading, setClientId } = useDashboardContext();

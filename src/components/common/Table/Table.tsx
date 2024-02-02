@@ -17,7 +17,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import React from "react";
-import { Pagination } from "./Pagination";
+import { Pagination } from "./Pagination/Pagination";
 
 interface TableProps<T> {
   data: T[];
@@ -55,7 +55,10 @@ export function Table<T extends object>({
   const ref = React.createRef<HTMLTableRowElement>();
   useOutsideClick({
     ref: ref,
-    handler: () => (dataIdSetter ? dataIdSetter("") : null),
+    handler: () => {
+      if (!dataIdSetter) return;
+      return selectedRowId ? dataIdSetter("") : null;
+    },
   });
   return (
     <>

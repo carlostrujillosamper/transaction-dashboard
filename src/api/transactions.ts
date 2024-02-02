@@ -49,7 +49,7 @@ export const fetchTransactionsByClient = async ({
       cursor ? `&cursor=${cursor}` : ""
     }&pageSize=${pageSize}`;
 
-    console.log("queryString", queryString);
+    console.log("queryString needed if we were actually calling a backend", queryString);
     /////////////////////////////////////////////////////////////////
 
     //actual fetch call to the server if there was a real server
