@@ -44,6 +44,7 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
         };
       },
       getNextPageParam: (lastPage) => {
+        // If there are no more pages, server would return no cursor which would prevent further refetching
         return lastPage.pagination.cursor;
       },
       onSuccess: (data) => {
