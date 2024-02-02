@@ -12,7 +12,6 @@ import { useTransactionTable } from "./useTransactionTable";
 
 export function TransactionTable() {
   const { transactions, totalCountTransactions, setNumberOfPagesLeftWithData } = useDashboardContext();
-
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { selectedTransaction, setTransactionId, transactionId } =

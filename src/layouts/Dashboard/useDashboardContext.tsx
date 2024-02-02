@@ -41,7 +41,11 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
   const [clientId, setClientId] = useState<string>("");
   const [numberOfPagesLeftWithData, setNumberOfPagesLeftWithData] =
     useState<number>(Number.MAX_SAFE_INTEGER);
-  const [totalData, setTotalData] = useState<TransactionsResponse["transactions"] | null>();
+  const [totalData, setTotalData] = useState<
+    TransactionsResponse["transactions"] | null
+  >();
+  const [numberOfFetches, setNumberOfFetches] = useState<number>(0);
+
   const fetchDataOptions: FetchTransactionsOptions = {
     clientId: clientId,
     startDate: "ISO-DATE-STRING",
@@ -49,7 +53,7 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
     cursor: "",
     pageSize: 100,
   };
-  
+
   const { data, error, isLoading, fetchNextPage } = useInfiniteQuery(
     ["data", fetchDataOptions],
     () => fetchTransactionsByClient(fetchDataOptions),
@@ -66,18 +70,21 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
       getNextPageParam: (lastPage) => {
         return lastPage.pagination.cursor;
       },
-      onSuccess: (data) =>{
-        setTotalData(data.pages.map((page) => page.transactions).flat());
+      onSuccess: (data) => {
+        setTotalData([
+          ...(totalData ?? []),
+          ...data.pages[numberOfFetches].transactions,
+        ]);
       },
     }
   );
-
   React.useEffect(() => {
-    if (numberOfPagesLeftWithData <= MIN_NUMBER_OF_PAGES_TILL_RETRIGGER ) {
+    if (numberOfPagesLeftWithData <= MIN_NUMBER_OF_PAGES_TILL_RETRIGGER) {
+      setNumberOfFetches((prev) => prev + 1);
       fetchNextPage();
     }
   }, [fetchNextPage, numberOfPagesLeftWithData]);
-  
+
   const contextValue: DashboardContextProps = {
     transactions: totalData ?? [],
     totalCountTransactions: data?.pages[0].totalCountTransactions ?? 0,
