@@ -31,6 +31,7 @@ export function Dashboard() {
             bgColor="white"
             name="client"
             onChange={(e) => setClientId(e.target.value)}
+            isDisabled={isLoading}
           >
             <option value="option1">Client 1</option>
             <option value="option2">Client 2</option>
